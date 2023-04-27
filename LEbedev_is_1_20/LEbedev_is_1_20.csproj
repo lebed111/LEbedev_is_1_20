@@ -97,6 +97,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Add_Precent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Precent.Designer.cs">
+      <DependentUpon>Add_Precent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Aftorization.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,22 +115,52 @@
     <Compile Include="Bullet.Designer.cs">
       <DependentUpon>Bullet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Change_Precent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Change_Precent.Designer.cs">
+      <DependentUpon>Change_Precent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="delet_Precent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="delet_Precent.Designer.cs">
+      <DependentUpon>delet_Precent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Precent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Precent.Designer.cs">
+      <DependentUpon>Precent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Add_Precent.resx">
+      <DependentUpon>Add_Precent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Aftorization.resx">
       <DependentUpon>Aftorization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Bullet.resx">
       <DependentUpon>Bullet.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Change_Precent.resx">
+      <DependentUpon>Change_Precent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="delet_Precent.resx">
+      <DependentUpon>delet_Precent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Precent.resx">
+      <DependentUpon>Precent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -134,6 +170,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -151,6 +188,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\Человек.png" />
+    <None Include="Resources\Image1.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

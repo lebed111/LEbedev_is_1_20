@@ -44,7 +44,7 @@ namespace LEbedev_is_1_20
             // устанавливаем соединение с БД
             f2.conn.Open();
             // запрос
-            string sql = $"SELECT * FROM employee WHERE login_em ='{login_user}'";
+            string sql = $"SELECT * FROM Emploee WHERE Login ='{login_user}'";
             // объект для выполнения SQL-запроса
             MySqlCommand command = new MySqlCommand(sql, f2.conn);
             // объект для чтения ответа сервера
@@ -54,8 +54,9 @@ namespace LEbedev_is_1_20
             {
                 // элементы массива [] - это значения столбцов из запроса SELECT
                 Auth.auth_id = reader[0].ToString();
-                Auth.auth_fio = reader[1].ToString();
-                Auth.auth_role = Convert.ToInt32(reader[4].ToString());
+                Auth.auth_fio = $"{reader[1].ToString()} {reader[2].ToString().Remove(1,(reader[2].ToString().Count())-1)}. {reader[3].ToString().Remove(1,(reader[3].ToString().Count())-1)}.";
+                Auth.auth_role = Convert.ToInt32(reader[5].ToString());
+                Auth.auto_post = reader[4].ToString();
             }
             reader.Close(); // закрываем reader
                             // закрываем соединение с БД
@@ -66,7 +67,7 @@ namespace LEbedev_is_1_20
             string f = metroTextBox1.Text;
             string r = sha256(metroTextBox2.Text);
             //Запрос в БД на предмет того, если ли строка с подходящим логином и паролем
-            string sql = $"SELECT employee.login_em, sha256.sha256_s FROM employee, sha256 WHERE employee.login_em = \"{f}\" and sha256.sha256_s =\"{r}\"";
+            string sql = $"SELECT Emploee.Login, sha256.sha256_s FROM Emploee, sha256 WHERE Emploee.Login = \"{f}\" and sha256.sha256_s =\"{r}\"";
             //Открытие соединения
             f2.conn.Open();
             //Объявляем таблицу

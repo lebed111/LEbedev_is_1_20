@@ -16,5 +16,10 @@ namespace LEbedev_is_1_20
         {
             InitializeComponent();
         }
+
+        private void Bullet_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -35,6 +35,7 @@ namespace LEbedev_is_1_20
         //Статичное поле, которое хранит количество привелегий пользователя
         public static int auth_role = 0;
         public static string eapsedTime = "";
+        public static string auto_post = null;
     }
     static class Program
     {
