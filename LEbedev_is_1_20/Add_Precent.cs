@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Text.RegularExpressions;
 
 namespace LEbedev_is_1_20
 {
@@ -150,23 +151,27 @@ namespace LEbedev_is_1_20
                 wensday += button9.Text;
             }
             #endregion
-            if (Moon == ysd)
+            try
             {
-                f2.conn.Open();
-                string com = $"INSERT INTO  Percent (Percent,PeriodWeek,Yslovia) VALUES ({cof},\"{wensday}\",\"{opi}\")";
-                MySqlCommand command = new MySqlCommand(com, f2.conn);
-                command.ExecuteNonQuery();
-                f2.conn.Close();
+                if (Moon == ysd)
+                {
+                    f2.conn.Open();
+                    string com = $"INSERT INTO  Percent (Percent,PeriodWeek,Yslovia) VALUES ({cof},\"{wensday}\",\"{opi}\")";
+                    MySqlCommand command = new MySqlCommand(com, f2.conn);
+                    command.ExecuteNonQuery();
+                    f2.conn.Close();
+                }
+                else
+                {
+                    f2.conn.Open();
+                    string com = $"INSERT INTO  Percent (Percent,PeriodWeek,ReriodMon,ReriodMoon,Yslovia) VALUES ({cof},\"{wensday}\",\"{ysd.ToString("yyyy-MM-dd")}\",\"{Moon.ToString("yyyy-MM-dd")}\",\"{opi}\")";
+                    MySqlCommand command = new MySqlCommand(com, f2.conn);
+                    command.ExecuteNonQuery();
+                    f2.conn.Close();
+                }
+                this.Close();
             }
-            else
-            {
-                f2.conn.Open();
-                string com = $"INSERT INTO  Percent (Percent,PeriodWeek,ReriodMon,ReriodMoon,Yslovia) VALUES ({cof},\"{wensday}\",\"{ysd.ToString("yyyy-MM-dd")}\",\"{Moon.ToString("yyyy-MM-dd")}\",\"{opi}\")";
-                MySqlCommand command = new MySqlCommand(com, f2.conn);
-                command.ExecuteNonQuery();
-                f2.conn.Close();
-            }
-            this.Close();
+            catch { MessageBox.Show("Заполните все поля"); }
         }
 
         private void button2_Click(object sender, EventArgs e)

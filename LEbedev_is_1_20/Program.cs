@@ -9,9 +9,12 @@ namespace LEbedev_is_1_20
 {
     public class Requests
     {
-        public MySqlConnection conn;
-        public void con()
+        public static int po = 0;
+        public int k = 0;
+        public  MySqlConnection conn;
+        public  void con()
         {
+            k = po;
             string connStr = "server=chuc.sdlik.ru;port=33333;user=st_1_20_19;database=is_1_20_st19_KURS;password=14313537;";
             conn = new MySqlConnection(connStr);
             if (conn == null)
@@ -19,6 +22,11 @@ namespace LEbedev_is_1_20
                 string connStr1 = "server=10.90.12.110;port=33333;user=st_1_20_19;database=is_1_20_st19_KURS;password=14313537;";
                 conn = new MySqlConnection(connStr1);
             }
+        }
+        public void Kk(int i)
+        {
+            po = i;
+            k = po;
         }
     }
 
@@ -37,7 +45,7 @@ namespace LEbedev_is_1_20
         public static string eapsedTime = "";
         public static string auto_post = null;
     }
-    static class Program
+    public static class Program
     {
         /// <summary>
         /// Главная точка входа для приложения.

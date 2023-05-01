@@ -68,10 +68,22 @@ namespace LEbedev_is_1_20
             bullet.FormBorderStyle = FormBorderStyle.None;
             this.panel1.Controls.Add(bullet);
             bullet.Show();
+            q = 1;
         }
 
         private void metroButton1_Click(object sender, EventArgs e)//добавление
         {
+            if(q == 1)
+            {
+                Add_Bullet add_Bullet = new Add_Bullet();
+                add_Bullet.ShowDialog();
+                this.panel1.Controls.Clear();
+                Bullet bullet = new Bullet() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                bullet.FormBorderStyle = FormBorderStyle.None;
+                this.panel1.Controls.Add(bullet);
+                bullet.Show();
+                q = 1;
+            }
             if (q == 2)
             {
                 Add_Precent precen = new Add_Precent();

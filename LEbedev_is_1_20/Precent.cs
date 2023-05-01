@@ -96,7 +96,6 @@ namespace LEbedev_is_1_20
                 button9.BackColor = Color.Green;
             }
         }
-
         public void Moon()
         {
             if (table.Rows[start - 1][3].ToString() == "" && table.Rows[start - 1][4].ToString() == "")
@@ -127,6 +126,17 @@ namespace LEbedev_is_1_20
         private void Precent_Load(object sender, EventArgs e)
         {
             f2.con();
+            if (f2.k == 0)
+            {
+                button10.Visible = false;
+            }
+            else
+            {
+                this.FormBorderStyle = FormBorderStyle.FixedSingle;
+                this.ControlBox = false;
+                button10.Visible = true;
+                f2.Kk(0);
+            }
             f2.conn.Open();
             string stroc = "SELECT ID FROM Percent";
             MySqlCommand command = new MySqlCommand(stroc, f2.conn);
@@ -188,6 +198,34 @@ namespace LEbedev_is_1_20
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int i = Convert.ToInt32(textBox2.Text);
+                for (int c = 0; i >= Convert.ToInt32(table.Rows[c][0]); c++)
+                {
+                    if (i == Convert.ToInt32(table.Rows[c][0]))
+                    {
+                        start = c+1;
+                        label4.Text = $"Коэфициент скидки {table.Rows[start - 1][1]}%";
+                        label3.Text = $"{table.Rows[start - 1][0]}";
+                        label1.Text = $"{start}/{cout}";
+                        Week();
+                        Moon();
+                        textBox1.Clear();
+                        textBox1.Text = table.Rows[start - 1][5].ToString();
+                    }
+                }
+            }
+            catch { }
         }
     }
 }

@@ -97,6 +97,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Add_Bullet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Bullet.Designer.cs">
+      <DependentUpon>Add_Bullet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Add_Precent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Add_Bullet.resx">
+      <DependentUpon>Add_Bullet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Add_Precent.resx">
       <DependentUpon>Add_Precent.cs</DependentUpon>
     </EmbeddedResource>
