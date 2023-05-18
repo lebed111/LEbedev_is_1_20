@@ -144,6 +144,11 @@ namespace LEbedev_is_1_20
             Week();
             Moon();
             textBox1.Text = table.Rows[start - 1][5].ToString();
+            textBox4.Text = table.Rows[start - 1][6].ToString();
+            for (int i = 1; i <= table.Rows.Count; i++)
+            {
+                comboBox1.Items.Add(table.Rows[i - 1][6]);
+            }
         }
 
         #region
@@ -244,6 +249,7 @@ namespace LEbedev_is_1_20
                 Moon();
                 textBox1.Clear();
                 textBox1.Text = table.Rows[start - 1][5].ToString();
+                textBox4.Text = table.Rows[start - 1][6].ToString();
             }
         }
 
@@ -259,6 +265,7 @@ namespace LEbedev_is_1_20
                 Moon();
                 textBox1.Clear();
                 textBox1.Text = table.Rows[start - 1][5].ToString();
+                textBox4.Text = table.Rows[start - 1][6].ToString();
             }
         }
 
@@ -280,6 +287,7 @@ namespace LEbedev_is_1_20
         {
             string id = label3.Text;
             string cof = textBox2.Text;
+            string nm = textBox4.Text;
             string wensday = "";
             //Определение дней недели
             #region
@@ -318,7 +326,7 @@ namespace LEbedev_is_1_20
             if(dateTimePicker2.Value == dateTimePicker1.Value)
             {
                 f2.conn.Open();
-                string cl = $"UPDATE Percent SET Percent = {cof}, PeriodWeek = \"{wensday}\", Yslovia=\"{info}\" WHERE ID ={id};";
+                string cl = $"UPDATE Percent SET Percent = {cof}, PeriodWeek = \"{wensday}\", Yslovia=\"{info}\", Name=\"{nm}\" WHERE ID ={id};";
                 MySqlCommand command = new MySqlCommand(cl, f2.conn);
                 command.ExecuteNonQuery();
                 f2.conn.Close();
@@ -330,7 +338,7 @@ namespace LEbedev_is_1_20
             if (dateTimePicker2.Value > dateTimePicker1.Value)
             {
                 f2.conn.Open();
-                string cl = $"UPDATE Percent SET Percent = {cof} , PeriodWeek = \"{wensday}\" , ReriodMon = \"{date1.ToString("yyyy-MM-dd")}\" , ReriodMoon = \"{date.ToString("yyyy-MM-dd")}\" , Yslovia=\"{info}\" WHERE ID = {id};";
+                string cl = $"UPDATE Percent SET Percent = {cof} , PeriodWeek = \"{wensday}\" , ReriodMon = \"{date1.ToString("yyyy-MM-dd")}\" , ReriodMoon = \"{date.ToString("yyyy-MM-dd")}\" , Yslovia=\"{info}\", Name=\"{nm}\" WHERE ID = {id};";
                 MySqlCommand command = new MySqlCommand(cl, f2.conn);
                 command.ExecuteNonQuery();
                 f2.conn.Close();
@@ -339,21 +347,26 @@ namespace LEbedev_is_1_20
 
         private void button13_Click(object sender, EventArgs e)
         {
+        }
+
+        private void button13_Click_1(object sender, EventArgs e)
+        {
             try
             {
-                int i = Convert.ToInt32(textBox2.Text);
-                for (int c = 0; i >= Convert.ToInt32(table.Rows[c][0]); c++)
+                string i = comboBox1.Text;
+                for (int c = 0; c <= 9999999; c++)
                 {
-                    if (i == Convert.ToInt32(table.Rows[c][0]))
+                    if (i == table.Rows[c][6].ToString())
                     {
                         start = c + 1;
-                        label4.Text = $"Коэфициент скидки {table.Rows[start - 1][1]}%";
+                        textBox2.Text = $"{table.Rows[start - 1][1]}%";
                         label3.Text = $"{table.Rows[start - 1][0]}";
                         label1.Text = $"{start}/{cout}";
                         Week();
                         Moon();
                         textBox1.Clear();
                         textBox1.Text = table.Rows[start - 1][5].ToString();
+                        textBox4.Text = $"{table.Rows[start - 1][6]}";
                     }
                 }
             }

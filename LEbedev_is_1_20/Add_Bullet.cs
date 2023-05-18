@@ -19,10 +19,9 @@ namespace LEbedev_is_1_20
         public MySqlDataAdapter MyDA = new MySqlDataAdapter();
         public DataTable table = new DataTable();
         int start = 1;
-        double cof = 0;
+        string q = "";
         public void Week()
         {
-            string q = "";
             string s = table.Rows[start - 1][2].ToString();
             button6.BackColor = Color.White;
             button7.BackColor = Color.White;
@@ -130,7 +129,7 @@ namespace LEbedev_is_1_20
             f2.conn.Close();
             for (int i = 1; i <= table.Rows.Count; i++)
             {
-                comboBox1.Items.Add(table.Rows[i-1][0]);
+                comboBox1.Items.Add(table.Rows[i-1][6]);
             }
         }
 
@@ -190,12 +189,13 @@ namespace LEbedev_is_1_20
                     label2.Text = "0 %";
                     textBox4.Text = textBox3.Text;
                 }
-                int i = Convert.ToInt32(comboBox1.Text);
-                for (int c = 0; i >= Convert.ToInt32(table.Rows[c][0]); c++)
+                string i = comboBox1.Text;
+                for (int c = 0; c <=9999999 ; c++)
                 {
-                    if (i == Convert.ToInt32(table.Rows[c][0]))
+                    if (i == table.Rows[c][6].ToString())
                     {
                         start = c + 1;
+                        string q = $"{table.Rows[c][2]}";
                         Week();
                         Moon();
                         label2.Text = $"{table.Rows[c][1]} %";
@@ -203,7 +203,8 @@ namespace LEbedev_is_1_20
                     }
                 }
             }
-            catch { }
+            catch(Exception ex) { MessageBox.Show(ex.Message); }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -232,7 +233,17 @@ namespace LEbedev_is_1_20
                     uint error = 10 / tet;
                 }
                 int dsc = 1;
-                try { dsc = Convert.ToInt32(comboBox1.Text); } catch { }
+                try {
+                    for (int c = 0; c <= 9999999; c++)
+                    {
+                        if (comboBox1.Text == table.Rows[c][6].ToString())
+                        {
+                            start = c + 1;
+                            dsc = Convert.ToInt32(table.Rows[c][0]);
+                        }
+                    }
+                } 
+                catch { }
                 f2.conn.Open();
                 string com = $"INSERT INTO  Bullet (Name,Description,Price,Discount,Lecture) VALUES (\"{name}\",\"{opi}\",{pri},{dsc},\"{yer}\")";
                 MySqlCommand command = new MySqlCommand(com, f2.conn);
@@ -251,6 +262,11 @@ namespace LEbedev_is_1_20
             {
                 e.Handled = true;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -73,7 +73,7 @@ namespace LEbedev_is_1_20
             this.menuStrip1.Location = new System.Drawing.Point(14, 123);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(537, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(510, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -95,8 +95,8 @@ namespace LEbedev_is_1_20
             // покупателиToolStripMenuItem
             // 
             this.покупателиToolStripMenuItem.Name = "покупателиToolStripMenuItem";
-            this.покупателиToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
-            this.покупателиToolStripMenuItem.Text = "Покупатели";
+            this.покупателиToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.покупателиToolStripMenuItem.Text = "Клиент";
             // 
             // купитьToolStripMenuItem
             // 

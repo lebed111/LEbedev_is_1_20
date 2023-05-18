@@ -17,8 +17,10 @@ namespace LEbedev_is_1_20
         public BindingSource bSource = new BindingSource();
         public MySqlDataAdapter MyDA = new MySqlDataAdapter();
         public DataTable table = new DataTable();
+        public DataTable per = new DataTable();
         Requests f2 = new Requests();
         int start = 1;
+        string q = "";
         public Change_Bullet()
         {
             InitializeComponent();
@@ -42,7 +44,6 @@ namespace LEbedev_is_1_20
         }
         public void Week()
         {
-            string q = "";
             string s = table.Rows[start - 1][8].ToString();
             button6.BackColor = Color.White;
             button7.BackColor = Color.White;
@@ -166,11 +167,46 @@ namespace LEbedev_is_1_20
             Moon();
             Week();
             yers();
+            f2.conn.Open();
+            string perc = "SELECT * FROM Percent";
+            MyDA.SelectCommand = new MySqlCommand(perc, f2.conn);
+            bSource.DataSource = per;
+            MyDA.Fill(per);
+            for (int i = 1; i <= per.Rows.Count; i++)
+            {
+                comboBox1.Items.Add(per.Rows[i - 1][6]);
+            }
+            f2.conn.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (comboBox1.Text == "")
+                {
+                    label2.Text = "0 %";
+                    textBox4.Text = textBox3.Text;
+                }
+                string i = comboBox1.Text;
+                for (int c = 0; c <= 9999999; c++)
+                {
+                    if (i == per.Rows[c][6].ToString())
+                    {
+                        start = c + 1;
+                        string q = $"{per.Rows[c][2]}";
+                        Week();
+                        Moon();
+                        textBox4.Text = $"{Convert.ToDouble(textBox3.Text) - (Convert.ToDouble(textBox3.Text) * Convert.ToDouble(per.Rows[start - 1][1]) / 100) }";
+                    }
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
     }
 }

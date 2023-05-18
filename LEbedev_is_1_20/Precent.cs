@@ -158,6 +158,11 @@ namespace LEbedev_is_1_20
             Week();
             Moon();
             textBox1.Text = table.Rows[start - 1][5].ToString();
+            label11.Text = $"Название : {table.Rows[start - 1][6]}";
+            for (int i = 1; i <= table.Rows.Count; i++)
+            {
+                comboBox1.Items.Add(table.Rows[i - 1][6]);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -172,6 +177,7 @@ namespace LEbedev_is_1_20
                 Moon();
                 textBox1.Clear();
                 textBox1.Text = table.Rows[start - 1][5].ToString();
+                label11.Text = $"Название : {table.Rows[start - 1][6]}";
             }           
         }
 
@@ -187,6 +193,7 @@ namespace LEbedev_is_1_20
                 Moon();
                 textBox1.Clear();
                 textBox1.Text = table.Rows[start - 1][5].ToString();
+                label11.Text = $"Название : {table.Rows[start - 1][6]}";
             }
         }
 
@@ -209,10 +216,10 @@ namespace LEbedev_is_1_20
         {
             try
             {
-                int i = Convert.ToInt32(textBox2.Text);
-                for (int c = 0; i >= Convert.ToInt32(table.Rows[c][0]); c++)
+                string i = comboBox1.Text;
+                for (int c = 0; c <= 9999999; c++)
                 {
-                    if (i == Convert.ToInt32(table.Rows[c][0]))
+                    if (i == table.Rows[c][6].ToString())
                     {
                         start = c+1;
                         label4.Text = $"Коэфициент скидки {table.Rows[start - 1][1]}%";
@@ -222,10 +229,16 @@ namespace LEbedev_is_1_20
                         Moon();
                         textBox1.Clear();
                         textBox1.Text = table.Rows[start - 1][5].ToString();
+                        label11.Text = $"Название : {table.Rows[start - 1][6]}";
                     }
                 }
             }
             catch { }
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

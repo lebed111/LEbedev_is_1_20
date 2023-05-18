@@ -163,7 +163,7 @@ namespace LEbedev_is_1_20
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(571, 24);
+            this.label7.Location = new System.Drawing.Point(563, 24);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(174, 20);
             this.label7.TabIndex = 51;
@@ -259,7 +259,7 @@ namespace LEbedev_is_1_20
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(752, 24);
+            this.comboBox1.Location = new System.Drawing.Point(744, 24);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(90, 21);
             this.comboBox1.TabIndex = 63;

@@ -117,6 +117,7 @@ namespace LEbedev_is_1_20
         {         
             string cof = textBox1.Text;
             string opi = textBox2.Text;
+            string nam = textBox3.Text;
             var Moon = Convert.ToDateTime(dateTimePicker2.Value.ToShortDateString());
             var ysd = DateTime.Today;
             string wensday = "";
@@ -156,7 +157,7 @@ namespace LEbedev_is_1_20
                 if (Moon == ysd)
                 {
                     f2.conn.Open();
-                    string com = $"INSERT INTO  Percent (Percent,PeriodWeek,Yslovia) VALUES ({cof},\"{wensday}\",\"{opi}\")";
+                    string com = $"INSERT INTO  Percent (Percent,PeriodWeek,Yslovia,Name) VALUES ({cof},\"{wensday}\",\"{opi}\",\"{nam}\")";
                     MySqlCommand command = new MySqlCommand(com, f2.conn);
                     command.ExecuteNonQuery();
                     f2.conn.Close();
@@ -164,7 +165,7 @@ namespace LEbedev_is_1_20
                 else
                 {
                     f2.conn.Open();
-                    string com = $"INSERT INTO  Percent (Percent,PeriodWeek,ReriodMon,ReriodMoon,Yslovia) VALUES ({cof},\"{wensday}\",\"{ysd.ToString("yyyy-MM-dd")}\",\"{Moon.ToString("yyyy-MM-dd")}\",\"{opi}\")";
+                    string com = $"INSERT INTO  Percent (Percent,PeriodWeek,ReriodMon,ReriodMoon,Yslovia,Name) VALUES ({cof},\"{wensday}\",\"{ysd.ToString("yyyy-MM-dd")}\",\"{Moon.ToString("yyyy-MM-dd")}\",\"{opi}\",\"{nam}\")";
                     MySqlCommand command = new MySqlCommand(com, f2.conn);
                     command.ExecuteNonQuery();
                     f2.conn.Close();

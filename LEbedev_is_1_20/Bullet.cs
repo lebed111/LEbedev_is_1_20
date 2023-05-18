@@ -236,7 +236,6 @@ namespace LEbedev_is_1_20
             try
             {
                 string r = comboBox1.Text;
-                int i = 0;
                 for (int c = 0; c <= 999999999; c++)
                 {
                     if (r == table.Rows[c][1].ToString())
@@ -261,6 +260,11 @@ namespace LEbedev_is_1_20
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

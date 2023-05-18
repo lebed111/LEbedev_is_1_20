@@ -58,6 +58,7 @@ namespace LEbedev_is_1_20
             this.button2 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -118,10 +119,11 @@ namespace LEbedev_is_1_20
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(753, 36);
+            this.comboBox1.Location = new System.Drawing.Point(709, 35);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(90, 21);
+            this.comboBox1.Size = new System.Drawing.Size(105, 21);
             this.comboBox1.TabIndex = 89;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -231,9 +233,9 @@ namespace LEbedev_is_1_20
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(572, 36);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(174, 20);
+            this.label7.Size = new System.Drawing.Size(131, 20);
             this.label7.TabIndex = 78;
-            this.label7.Text = "Выбрать скидку по ID";
+            this.label7.Text = "Выбрать скидку";
             // 
             // button6
             // 
@@ -348,11 +350,21 @@ namespace LEbedev_is_1_20
             this.label1.TabIndex = 98;
             this.label1.Text = "ID";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(618, 214);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(85, 13);
+            this.label9.TabIndex = 99;
+            this.label9.Text = "Коэф. скидки : ";
+            // 
             // Change_Bullet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(849, 361);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.button2);
@@ -420,5 +432,6 @@ namespace LEbedev_is_1_20
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label9;
     }
 }
