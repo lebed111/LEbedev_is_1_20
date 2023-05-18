@@ -108,7 +108,6 @@ namespace LEbedev_is_1_20
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "delet_Precent";
-            this.Text = "delet_Precent";
             this.Load += new System.EventHandler(this.delet_Precent_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

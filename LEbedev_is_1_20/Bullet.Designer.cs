@@ -54,9 +54,9 @@ namespace LEbedev_is_1_20
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.button13 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // button1
@@ -304,24 +304,15 @@ namespace LEbedev_is_1_20
             this.label9.Click += new System.EventHandler(this.label9_Click);
             this.label9.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label9_MouseClick);
             // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(703, 21);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(116, 23);
-            this.textBox2.TabIndex = 40;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(597, 23);
+            this.label10.Location = new System.Drawing.Point(540, 21);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(100, 20);
+            this.label10.Size = new System.Drawing.Size(157, 20);
             this.label10.TabIndex = 41;
-            this.label10.Text = "Найти по ID";
+            this.label10.Text = "Найти по названию";
             // 
             // button13
             // 
@@ -335,14 +326,22 @@ namespace LEbedev_is_1_20
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(698, 21);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 43;
+            // 
             // Bullet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(865, 400);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox1);
@@ -402,8 +401,8 @@ namespace LEbedev_is_1_20
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

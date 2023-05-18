@@ -336,5 +336,28 @@ namespace LEbedev_is_1_20
                 f2.conn.Close();
             }
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int i = Convert.ToInt32(textBox2.Text);
+                for (int c = 0; i >= Convert.ToInt32(table.Rows[c][0]); c++)
+                {
+                    if (i == Convert.ToInt32(table.Rows[c][0]))
+                    {
+                        start = c + 1;
+                        label4.Text = $"Коэфициент скидки {table.Rows[start - 1][1]}%";
+                        label3.Text = $"{table.Rows[start - 1][0]}";
+                        label1.Text = $"{start}/{cout}";
+                        Week();
+                        Moon();
+                        textBox1.Clear();
+                        textBox1.Text = table.Rows[start - 1][5].ToString();
+                    }
+                }
+            }
+            catch { }
+        }
     }
 }

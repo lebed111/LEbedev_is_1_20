@@ -99,6 +99,17 @@ namespace LEbedev_is_1_20
 
         private void metroButton2_Click(object sender, EventArgs e)//изменить
         {
+            if(q == 1)
+            {
+                Change_Bullet change_Bullet = new Change_Bullet();
+                change_Bullet.ShowDialog();
+                this.panel1.Controls.Clear();
+                Bullet bullet = new Bullet() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                bullet.FormBorderStyle = FormBorderStyle.None;
+                this.panel1.Controls.Add(bullet);
+                bullet.Show();
+                q = 1;
+            }
             if (q==2)
             {
                 Change_Precent change_Precent = new Change_Precent();

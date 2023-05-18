@@ -121,6 +121,12 @@
     <Compile Include="Bullet.Designer.cs">
       <DependentUpon>Bullet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Change_Bullet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Change_Bullet.Designer.cs">
+      <DependentUpon>Change_Bullet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Change_Precent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Bullet.resx">
       <DependentUpon>Bullet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Change_Bullet.resx">
+      <DependentUpon>Change_Bullet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Change_Precent.resx">
       <DependentUpon>Change_Precent.cs</DependentUpon>

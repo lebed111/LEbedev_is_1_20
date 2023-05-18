@@ -12,15 +12,14 @@ using System.Text.RegularExpressions;
 
 namespace LEbedev_is_1_20
 {
-    public partial class Bullet : Form
+    public partial class Change_Bullet : Form
     {
         public BindingSource bSource = new BindingSource();
         public MySqlDataAdapter MyDA = new MySqlDataAdapter();
         public DataTable table = new DataTable();
         Requests f2 = new Requests();
         int start = 1;
-        int cout = 0;
-        public Bullet()
+        public Change_Bullet()
         {
             InitializeComponent();
         }
@@ -149,120 +148,29 @@ namespace LEbedev_is_1_20
                 button5.BackColor = Color.Green;
             }
         }
-        private void Bullet_Load(object sender, EventArgs e)
+        private void Change_Bullet_Load(object sender, EventArgs e)
         {
             f2.con();
-            f2.conn.Open();
-            string stroc = "SELECT ID FROM Bullet";
-            MySqlCommand command = new MySqlCommand(stroc, f2.conn);
-            MySqlDataReader reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-                cout++;
-            }
-            label1.Text = $"{start}/{cout}";
-            f2.conn.Close();
             f2.conn.Open();
             string tab = "SELECT * FROM Bullet  LEFT JOIN Percent ON Bullet.Discount = Percent.ID";
             MyDA.SelectCommand = new MySqlCommand(tab, f2.conn);
             bSource.DataSource = table;
             MyDA.Fill(table);
-            for (int i = 1; i <= table.Rows.Count; i++)
-            {
-                comboBox1.Items.Add(table.Rows[i - 1][1]);
-            }
             f2.conn.Close();
-            label2.Text = $"ID {table.Rows[start - 1][0]}";
-            label3.Text = $"Название биллета : {table.Rows[start - 1][1]}";
-            label4.Text = $"Цена без скидки : {table.Rows[start - 1][3]}";
-            label5.Text = $"Цена со скидкой : {Convert.ToDouble(table.Rows[start - 1][3]) - Convert.ToDouble(table.Rows[start - 1][3]) * (Convert.ToDouble(table.Rows[start - 1][7]) / 100)}";
+            label1.Text = $"ID {table.Rows[start - 1][0]}";
+            textBox2.Text = $"{table.Rows[start - 1][1]}";
+            textBox3.Text = $"{table.Rows[start - 1][3]}";
+            textBox4.Text = $"{Convert.ToDouble(table.Rows[start - 1][3]) - Convert.ToDouble(table.Rows[start - 1][3]) * (Convert.ToDouble(table.Rows[start - 1][7]) / 100)}";
             textBox1.Text = $"{table.Rows[start - 1][1]}";
-            label9.Text = $"ID скидки {table.Rows[start - 1][6]}";
-            yers();
-            Week();
+            comboBox1.Text = $"{table.Rows[start - 1][6]}";
             Moon();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (start < cout)
-            {
-                start += 1;
-                label1.Text = $"{start}/{cout}";
-                label2.Text = $"ID {table.Rows[start - 1][0]}";
-                label3.Text = $"Название биллета : {table.Rows[start - 1][1]}";
-                label4.Text = $"Цена без скидки : {table.Rows[start - 1][3]}";
-                label5.Text = $"Цена со скидкой : {Convert.ToDouble(table.Rows[start - 1][3]) - Convert.ToDouble(table.Rows[start - 1][3]) * (Convert.ToDouble(table.Rows[start - 1][7]) / 100)}";
-                textBox1.Text = $"{table.Rows[start - 1][1]}";
-                label9.Text = $"ID скидки {table.Rows[start - 1][6]}";
-                yers();
-                Week();
-                Moon();
-            }
+            Week();
+            yers();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (start > 1)
-            {
-                start -= 1;
-                label1.Text = $"{start}/{cout}";
-                label2.Text = $"ID {table.Rows[start - 1][0]}";
-                label3.Text = $"Название биллета : {table.Rows[start - 1][1]}";
-                label4.Text = $"Цена без скидки : {table.Rows[start - 1][3]}";
-                label5.Text = $"Цена со скидкой : {Convert.ToDouble(table.Rows[start - 1][3]) - Convert.ToDouble(table.Rows[start - 1][3]) * (Convert.ToDouble(table.Rows[start - 1][7]) / 100)}";
-                textBox1.Text = $"{table.Rows[start - 1][1]}";
-                label9.Text = $"ID скидки {table.Rows[start - 1][6]}";
-                yers();
-                Week();
-                Moon();
-            }
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_MouseClick(object sender, MouseEventArgs e)
-        {
-            f2.Kk(1);
-            Precent s2 = new Precent();
-            s2.Show();
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string r = comboBox1.Text;
-                int i = 0;
-                for (int c = 0; c <= 999999999; c++)
-                {
-                    if (r == table.Rows[c][1].ToString())
-                    {
-                        start = c + 1;
-                        label1.Text = $"{start}/{cout}";
-                        label2.Text = $"ID {table.Rows[start - 1][0]}";
-                        label3.Text = $"Название биллета : {table.Rows[start - 1][1]}";
-                        label4.Text = $"Цена без скидки : {table.Rows[start - 1][3]}";
-                        label5.Text = $"Цена со скидкой : {Convert.ToDouble(table.Rows[start - 1][3]) - Convert.ToDouble(table.Rows[start - 1][3]) * (Convert.ToDouble(table.Rows[start - 1][7]) / 100)}";
-                        textBox1.Text = $"{table.Rows[start - 1][1]}";
-                        label9.Text = $"ID скидки {table.Rows[start - 1][6]}";
-                        yers();
-                        Week();
-                        Moon();
-                        break;
-                    }
-                }
-            }
-            catch(Exception ex) {  }
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
     }
 }

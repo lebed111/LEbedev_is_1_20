@@ -29,6 +29,7 @@ namespace LEbedev_is_1_20
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Change_Precent));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -55,6 +56,9 @@ namespace LEbedev_is_1_20
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.button13 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -305,7 +309,7 @@ namespace LEbedev_is_1_20
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(521, 8);
+            this.label10.Location = new System.Drawing.Point(521, 34);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(316, 13);
             this.label10.TabIndex = 58;
@@ -314,17 +318,51 @@ namespace LEbedev_is_1_20
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(521, 21);
+            this.label11.Location = new System.Drawing.Point(521, 47);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(158, 13);
             this.label11.TabIndex = 59;
             this.label11.Text = "при этом не листая страницы";
+            // 
+            // button13
+            // 
+            this.button13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button13.BackgroundImage")));
+            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button13.Location = new System.Drawing.Point(808, 8);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(28, 23);
+            this.button13.TabIndex = 62;
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Location = new System.Drawing.Point(580, 10);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(100, 20);
+            this.label12.TabIndex = 61;
+            this.label12.Text = "Найти по ID";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox3.Location = new System.Drawing.Point(686, 8);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(116, 23);
+            this.textBox3.TabIndex = 60;
             // 
             // Change_Precent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(849, 361);
+            this.Controls.Add(this.button13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox2);
@@ -387,5 +425,8 @@ namespace LEbedev_is_1_20
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }
