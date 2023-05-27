@@ -95,6 +95,28 @@ namespace LEbedev_is_1_20
                 precent.Show();
                 q = 2;
             }
+            if (q == 3)
+            {
+                Add_Client add_Client = new Add_Client();
+                add_Client.ShowDialog();
+                this.panel1.Controls.Clear();
+                Clint clint = new Clint { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                clint.FormBorderStyle = FormBorderStyle.None;
+                this.panel1.Controls.Add(clint);
+                clint.Show();
+                q = 3;
+            }
+            if (q == 4)
+            {
+                Add_Emploee add_Emploee = new Add_Emploee();
+                add_Emploee.ShowDialog();
+                this.panel1.Controls.Clear();
+                Employee employee = new Employee { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                employee.FormBorderStyle = FormBorderStyle.None;
+                this.panel1.Controls.Add(employee);
+                employee.Show();
+                q = 4;
+            }
         }
 
         private void metroButton2_Click(object sender, EventArgs e)//изменить
@@ -121,10 +143,32 @@ namespace LEbedev_is_1_20
                 precent.Show();
                 q = 2;
             }
+            if (q == 3)
+            {
+                Change_Client change_Client = new Change_Client();
+                change_Client.ShowDialog();
+                this.panel1.Controls.Clear();
+                Clint clint = new Clint { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                clint.FormBorderStyle = FormBorderStyle.None;
+                this.panel1.Controls.Add(clint);
+                clint.Show();
+                q = 3;
+            }
         }
 
         private void metroButton3_Click(object sender, EventArgs e)//удалить
         {
+            if (q == 1)
+            {
+                delet_Bullet delet = new delet_Bullet();
+                delet.ShowDialog();
+                this.panel1.Controls.Clear();
+                Bullet bullet = new Bullet() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                bullet.FormBorderStyle = FormBorderStyle.None;
+                this.panel1.Controls.Add(bullet);
+                bullet.Show();
+                q = 1;
+            }
             if(q==2)
             {
                 delet_Precent delet = new delet_Precent();
@@ -136,6 +180,17 @@ namespace LEbedev_is_1_20
                 precent.Show();
                 q = 2;
             }
+            if(q==3)
+            {
+                delet_Client delet = new delet_Client();
+                delet.ShowDialog();
+                this.panel1.Controls.Clear();
+                Clint clint = new Clint { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                clint.FormBorderStyle = FormBorderStyle.None;
+                this.panel1.Controls.Add(clint);
+                clint.Show();
+                q = 3;
+            }
         }
 
         private void metroButton5_Click(object sender, EventArgs e)//сортировка
@@ -146,6 +201,26 @@ namespace LEbedev_is_1_20
         private void metroButton6_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void покупателиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.panel1.Controls.Clear();
+            Clint clint = new Clint { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            clint.FormBorderStyle = FormBorderStyle.None;
+            this.panel1.Controls.Add(clint);
+            clint.Show();
+            q = 3;
+        }
+
+        private void сотруднкиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.panel1.Controls.Clear();
+            Employee employee = new Employee { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            employee.FormBorderStyle = FormBorderStyle.None;
+            this.panel1.Controls.Add(employee);
+            employee.Show();
+            q = 4;
         }
     }
 }

@@ -12,6 +12,7 @@ using System.Text.RegularExpressions;
 
 namespace LEbedev_is_1_20
 {
+    //не сделано
     public partial class Change_Bullet : Form
     {
         public BindingSource bSource = new BindingSource();
@@ -163,7 +164,6 @@ namespace LEbedev_is_1_20
             textBox3.Text = $"{table.Rows[start - 1][3]}";
             textBox4.Text = $"{Convert.ToDouble(table.Rows[start - 1][3]) - Convert.ToDouble(table.Rows[start - 1][3]) * (Convert.ToDouble(table.Rows[start - 1][7]) / 100)}";
             textBox1.Text = $"{table.Rows[start - 1][1]}";
-            comboBox1.Text = $"{table.Rows[start - 1][6]}";
             Moon();
             Week();
             yers();
@@ -175,6 +175,10 @@ namespace LEbedev_is_1_20
             for (int i = 1; i <= per.Rows.Count; i++)
             {
                 comboBox1.Items.Add(per.Rows[i - 1][6]);
+            }
+            for (int i = 1; i <= table.Rows.Count; i++)
+            {
+                comboBox2.Items.Add(table.Rows[i - 1][1]);
             }
             f2.conn.Close();
         }
@@ -190,8 +194,8 @@ namespace LEbedev_is_1_20
             {
                 if (comboBox1.Text == "")
                 {
-                    label2.Text = "0 %";
-                    textBox4.Text = textBox3.Text;
+                    label9.Text = "0 %";
+                    textBox3.Text = textBox4.Text;
                 }
                 string i = comboBox1.Text;
                 for (int c = 0; c <= 9999999; c++)
@@ -200,6 +204,7 @@ namespace LEbedev_is_1_20
                     {
                         start = c + 1;
                         string q = $"{per.Rows[c][2]}";
+                        label9.Text = $"Коэф. скидки : {per.Rows[c][1]}";
                         Week();
                         Moon();
                         textBox4.Text = $"{Convert.ToDouble(textBox3.Text) - (Convert.ToDouble(textBox3.Text) * Convert.ToDouble(per.Rows[start - 1][1]) / 100) }";
@@ -207,6 +212,31 @@ namespace LEbedev_is_1_20
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string r = comboBox2.Text;
+                for (int c = 0; c<=9999999;c++)
+                {
+                    if (r  == table.Rows[c][1].ToString())
+                    {
+                        start = c ;
+                        label1.Text = $"ID {table.Rows[start][0]}";
+                        textBox2.Text = $"{table.Rows[start - 1][1]}";
+                        textBox3.Text = $"{table.Rows[start - 1][3]}";
+                        textBox4.Text = $"{Convert.ToDouble(table.Rows[start - 1][3]) - Convert.ToDouble(table.Rows[start - 1][3]) * (Convert.ToDouble(table.Rows[start - 1][7]) / 100)}";
+                        textBox1.Text = $"{table.Rows[start - 1][2]}";
+                        yers();
+                        Week();
+                        Moon();
+                        break;
+                    }
+                }
+            }
+            catch { }
         }
     }
 }

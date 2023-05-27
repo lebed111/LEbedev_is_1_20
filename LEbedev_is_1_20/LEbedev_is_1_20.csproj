@@ -103,6 +103,18 @@
     <Compile Include="Add_Bullet.Designer.cs">
       <DependentUpon>Add_Bullet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Add_Client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Client.Designer.cs">
+      <DependentUpon>Add_Client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add_Emploee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Emploee.Designer.cs">
+      <DependentUpon>Add_Emploee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Add_Precent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,17 +139,47 @@
     <Compile Include="Change_Bullet.Designer.cs">
       <DependentUpon>Change_Bullet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Change_Client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Change_Client.Designer.cs">
+      <DependentUpon>Change_Client.cs</DependentUpon>
+    </Compile>
     <Compile Include="Change_Precent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Change_Precent.Designer.cs">
       <DependentUpon>Change_Precent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clint.Designer.cs">
+      <DependentUpon>Clint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="delet_Bullet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="delet_Bullet.Designer.cs">
+      <DependentUpon>delet_Bullet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="delet_Client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="delet_Client.Designer.cs">
+      <DependentUpon>delet_Client.cs</DependentUpon>
+    </Compile>
     <Compile Include="delet_Precent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="delet_Precent.Designer.cs">
       <DependentUpon>delet_Precent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee.Designer.cs">
+      <DependentUpon>Employee.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -156,6 +198,12 @@
     <EmbeddedResource Include="Add_Bullet.resx">
       <DependentUpon>Add_Bullet.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Add_Client.resx">
+      <DependentUpon>Add_Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_Emploee.resx">
+      <DependentUpon>Add_Emploee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Add_Precent.resx">
       <DependentUpon>Add_Precent.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,11 +216,26 @@
     <EmbeddedResource Include="Change_Bullet.resx">
       <DependentUpon>Change_Bullet.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Change_Client.resx">
+      <DependentUpon>Change_Client.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Change_Precent.resx">
       <DependentUpon>Change_Precent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Clint.resx">
+      <DependentUpon>Clint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="delet_Bullet.resx">
+      <DependentUpon>delet_Bullet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="delet_Client.resx">
+      <DependentUpon>delet_Client.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="delet_Precent.resx">
       <DependentUpon>delet_Precent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee.resx">
+      <DependentUpon>Employee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

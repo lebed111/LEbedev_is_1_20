@@ -40,12 +40,11 @@ namespace LEbedev_is_1_20
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroButton6 = new MetroFramework.Controls.MetroButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -97,6 +96,7 @@ namespace LEbedev_is_1_20
             this.покупателиToolStripMenuItem.Name = "покупателиToolStripMenuItem";
             this.покупателиToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
             this.покупателиToolStripMenuItem.Text = "Клиент";
+            this.покупателиToolStripMenuItem.Click += new System.EventHandler(this.покупателиToolStripMenuItem_Click);
             // 
             // купитьToolStripMenuItem
             // 
@@ -115,6 +115,7 @@ namespace LEbedev_is_1_20
             this.сотруднкиToolStripMenuItem.Name = "сотруднкиToolStripMenuItem";
             this.сотруднкиToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.сотруднкиToolStripMenuItem.Text = "Сотруднки";
+            this.сотруднкиToolStripMenuItem.Click += new System.EventHandler(this.сотруднкиToolStripMenuItem_Click);
             // 
             // metroButton1
             // 
@@ -142,14 +143,6 @@ namespace LEbedev_is_1_20
             this.metroButton3.TabIndex = 5;
             this.metroButton3.Text = "Удалить";
             this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(827, 126);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(150, 21);
-            this.comboBox1.TabIndex = 8;
             // 
             // label1
             // 
@@ -180,16 +173,6 @@ namespace LEbedev_is_1_20
             this.metroButton5.Text = "Сортировка";
             this.metroButton5.Click += new System.EventHandler(this.metroButton5_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::LEbedev_is_1_20.Properties.Resources.Человек;
-            this.pictureBox1.Location = new System.Drawing.Point(827, 32);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 87);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // metroButton6
             // 
             this.metroButton6.Location = new System.Drawing.Point(14, 541);
@@ -198,6 +181,17 @@ namespace LEbedev_is_1_20
             this.metroButton6.TabIndex = 12;
             this.metroButton6.Text = "Выход";
             this.metroButton6.Click += new System.EventHandler(this.metroButton6_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::LEbedev_is_1_20.Properties.Resources.Человек;
+            this.pictureBox1.Location = new System.Drawing.Point(812, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(165, 150);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Menu
             // 
@@ -208,7 +202,6 @@ namespace LEbedev_is_1_20
             this.Controls.Add(this.metroButton5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.metroButton1);
@@ -240,7 +233,6 @@ namespace LEbedev_is_1_20
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroButton metroButton3;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private MetroFramework.Controls.MetroButton metroButton5;
