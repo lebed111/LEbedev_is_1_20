@@ -154,6 +154,17 @@ namespace LEbedev_is_1_20
                 clint.Show();
                 q = 3;
             }
+            if (q == 4)
+            {
+                Change_Emploee change_Emploee = new Change_Emploee();
+                change_Emploee.ShowDialog();
+                this.panel1.Controls.Clear();
+                Employee employee = new Employee { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                employee.FormBorderStyle = FormBorderStyle.None;
+                this.panel1.Controls.Add(employee);
+                employee.Show();
+                q = 4;
+            }
         }
 
         private void metroButton3_Click(object sender, EventArgs e)//удалить
@@ -191,6 +202,17 @@ namespace LEbedev_is_1_20
                 clint.Show();
                 q = 3;
             }
+            if (q == 4)
+            {
+                delete_Emploee delete = new delete_Emploee();
+                delete.ShowDialog();
+                this.panel1.Controls.Clear();
+                Employee employee = new Employee { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                employee.FormBorderStyle = FormBorderStyle.None;
+                this.panel1.Controls.Add(employee);
+                employee.Show();
+                q = 4;
+            }
         }
 
         private void metroButton5_Click(object sender, EventArgs e)//сортировка
@@ -221,6 +243,22 @@ namespace LEbedev_is_1_20
             this.panel1.Controls.Add(employee);
             employee.Show();
             q = 4;
+        }
+
+        private void купитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.panel1.Controls.Clear();
+            Buy buy = new Buy { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            buy.FormBorderStyle = FormBorderStyle.None;
+            this.panel1.Controls.Add(buy);
+            buy.Show();
+            q = 5;
+        }
+
+        private void настройкаВремениСеансаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Seans seans = new Seans();
+            seans.Show();
         }
     }
 }

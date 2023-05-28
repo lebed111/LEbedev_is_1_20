@@ -12,7 +12,7 @@ using System.Text.RegularExpressions;
 
 namespace LEbedev_is_1_20
 {
-    public partial class Employee : Form
+    public partial class Change_Emploee : Form
     {
         public BindingSource bSource = new BindingSource();
         public MySqlDataAdapter MyDA = new MySqlDataAdapter();
@@ -20,7 +20,7 @@ namespace LEbedev_is_1_20
         Requests f2 = new Requests();
 
         int start = 1;
-        public Employee()
+        public Change_Emploee()
         {
             InitializeComponent();
         }
@@ -28,9 +28,9 @@ namespace LEbedev_is_1_20
         {
             string s = table.Rows[start - 1][5].ToString();
             button4.BackColor = Color.White;
-            button5.BackColor = Color.White;
-            button6.BackColor = Color.White;
-            button7.BackColor = Color.White;
+            button3.BackColor = Color.White;
+            button2.BackColor = Color.White;
+            button1.BackColor = Color.White;
 
             Regex regex = new Regex(@"0");
             MatchCollection matches = regex.Matches(s);
@@ -45,32 +45,32 @@ namespace LEbedev_is_1_20
             matches = regex.Matches(s);
             foreach (Match match in matches)
                 i = match.Value;
-            if (button5.Text == i)
+            if (button3.Text == i)
             {
-                button5.BackColor = Color.Green;
+                button3.BackColor = Color.Green;
             }
 
             regex = new Regex(@"2");
             matches = regex.Matches(s);
             foreach (Match match in matches)
                 i = match.Value;
-            if (button6.Text == i)
+            if (button2.Text == i)
             {
-                button6.BackColor = Color.Green;
+                button2.BackColor = Color.Green;
             }
 
             regex = new Regex(@"1");
             matches = regex.Matches(s);
             foreach (Match match in matches)
                 i = match.Value;
-            if (button7.Text == i)
+            if (button1.Text == i)
             {
-                button7.BackColor = Color.Green;
+                button1.BackColor = Color.Green;
             }
         }
-
-        private void Employee_Load(object sender, EventArgs e)
+        private void Change_Emploee_Load(object sender, EventArgs e)
         {
+            this.ControlBox = false;
             f2.con();
             f2.conn.Open();
             string emploee = "SELECT * FROM Emploee";
@@ -78,15 +78,15 @@ namespace LEbedev_is_1_20
             bSource.DataSource = table;
             MyDA.Fill(table);
             f2.conn.Close();
-            label1.Text = $"ID: {table.Rows[start - 1][0]}";
-            label4.Text = $"Фамилия: {table.Rows[start - 1][1]}";
-            label5.Text = $"Имя: {table.Rows[start - 1][2]}";
-            label6.Text = $"Отчетсво: {table.Rows[start - 1][3]}";
-            label8.Text = $"Телефон: {table.Rows[start - 1][6]}";
+            label15.Text = $"ID: {table.Rows[start - 1][0]}";
+            textBox1.Text = $"{table.Rows[start - 1][1]}";
+            textBox2.Text = $"{table.Rows[start - 1][2]}";
+            textBox3.Text = $"{table.Rows[start - 1][3]}";
+            textBox4.Text = $"{table.Rows[start - 1][6]}";
             dolg(table.Rows[start - 1][5].ToString());
-            label13.Text = $"Должность: {table.Rows[start - 1][4]}";
-            label10.Text = $"Адрес проживания: {table.Rows[start - 1][7]}";
-            label11.Text = $"Логин: {table.Rows[start - 1][8]}";
+            textBox6.Text = $"{table.Rows[start - 1][4]}";
+            textBox7.Text = $"{table.Rows[start - 1][7]}";
+            textBox8.Text = $"{table.Rows[start - 1][8]}";
             for (int i = 1; i <= table.Rows.Count; i++)
             {
                 comboBox1.Items.Add(table.Rows[i - 1][0]);
@@ -95,12 +95,47 @@ namespace LEbedev_is_1_20
             {
                 comboBox2.Items.Add(table.Rows[i - 1][1]);
             }
-            label14.Text = $"{start}/{table.Rows.Count}";
+            label22.Text = $"{start}/{table.Rows.Count}";
         }
 
-        private void label14_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            label1.Text = $"{textBox1.Text.Length}/255";
+        }
 
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            label3.Text = $"{textBox2.Text.Length}/255";
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            label14.Text = $"{textBox3.Text.Length}/255";
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            label16.Text = $"{textBox6.Text.Length}/255";
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+            label17.Text = $"{textBox7.Text.Length}/255";
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+            label19.Text = $"{textBox8.Text.Length}/255";
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+            label18.Text = $"{textBox9.Text.Length}/255";
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -44,6 +44,7 @@ namespace LEbedev_is_1_20
             this.label2 = new System.Windows.Forms.Label();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.metroButton6 = new MetroFramework.Controls.MetroButton();
+            this.настройкаВремениСеансаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -68,11 +69,12 @@ namespace LEbedev_is_1_20
             this.покупателиToolStripMenuItem,
             this.купитьToolStripMenuItem,
             this.калькуляторToolStripMenuItem,
-            this.сотруднкиToolStripMenuItem});
+            this.сотруднкиToolStripMenuItem,
+            this.настройкаВремениСеансаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(14, 123);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(510, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(802, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -101,8 +103,9 @@ namespace LEbedev_is_1_20
             // купитьToolStripMenuItem
             // 
             this.купитьToolStripMenuItem.Name = "купитьToolStripMenuItem";
-            this.купитьToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.купитьToolStripMenuItem.Text = "Продажа";
+            this.купитьToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.купитьToolStripMenuItem.Text = "Продажы";
+            this.купитьToolStripMenuItem.Click += new System.EventHandler(this.купитьToolStripMenuItem_Click);
             // 
             // калькуляторToolStripMenuItem
             // 
@@ -182,6 +185,13 @@ namespace LEbedev_is_1_20
             this.metroButton6.Text = "Выход";
             this.metroButton6.Click += new System.EventHandler(this.metroButton6_Click);
             // 
+            // настройкаВремениСеансаToolStripMenuItem
+            // 
+            this.настройкаВремениСеансаToolStripMenuItem.Name = "настройкаВремениСеансаToolStripMenuItem";
+            this.настройкаВремениСеансаToolStripMenuItem.Size = new System.Drawing.Size(169, 20);
+            this.настройкаВремениСеансаToolStripMenuItem.Text = "Настройка времени сеанса";
+            this.настройкаВремениСеансаToolStripMenuItem.Click += new System.EventHandler(this.настройкаВремениСеансаToolStripMenuItem_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -238,5 +248,6 @@ namespace LEbedev_is_1_20
         private MetroFramework.Controls.MetroButton metroButton5;
         private System.Windows.Forms.ToolStripMenuItem сотруднкиToolStripMenuItem;
         private MetroFramework.Controls.MetroButton metroButton6;
+        private System.Windows.Forms.ToolStripMenuItem настройкаВремениСеансаToolStripMenuItem;
     }
 }
