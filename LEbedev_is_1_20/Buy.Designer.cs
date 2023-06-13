@@ -62,7 +62,7 @@ namespace LEbedev_is_1_20
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(24, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "0/0";
+            this.label1.Text = "1/1";
             // 
             // button1
             // 
@@ -87,9 +87,9 @@ namespace LEbedev_is_1_20
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(18, 13);
+            this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "ID";
+            this.label2.Text = "ID 1";
             // 
             // label3
             // 
@@ -97,9 +97,9 @@ namespace LEbedev_is_1_20
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(44, 50);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 20);
+            this.label3.Size = new System.Drawing.Size(311, 20);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Название биллета :";
+            this.label3.Text = "Название биллета : Тестовый_биллет1";
             // 
             // label4
             // 
@@ -107,9 +107,9 @@ namespace LEbedev_is_1_20
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(44, 80);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 20);
+            this.label4.Size = new System.Drawing.Size(96, 20);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Цена :";
+            this.label4.Text = "Цена : 1000";
             // 
             // label5
             // 
@@ -117,9 +117,9 @@ namespace LEbedev_is_1_20
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(207, 80);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 20);
+            this.label5.Size = new System.Drawing.Size(152, 20);
             this.label5.TabIndex = 6;
-            this.label5.Text = "Коэф. скидки :";
+            this.label5.Text = "Коэф. скидки : 850";
             // 
             // label6
             // 
@@ -127,9 +127,9 @@ namespace LEbedev_is_1_20
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(44, 130);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(129, 20);
+            this.label6.Size = new System.Drawing.Size(142, 20);
             this.label6.TabIndex = 7;
-            this.label6.Text = "Покупатель ID :";
+            this.label6.Text = "Покупатель ID : 1";
             // 
             // label7
             // 
@@ -137,9 +137,9 @@ namespace LEbedev_is_1_20
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(279, 163);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 20);
+            this.label7.Size = new System.Drawing.Size(181, 20);
             this.label7.TabIndex = 8;
-            this.label7.Text = " ФИО :";
+            this.label7.Text = " ФИО : Пудовиков Н.И.";
             // 
             // label8
             // 
@@ -147,9 +147,9 @@ namespace LEbedev_is_1_20
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.Location = new System.Drawing.Point(46, 163);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(87, 20);
+            this.label8.Size = new System.Drawing.Size(227, 20);
             this.label8.TabIndex = 9;
-            this.label8.Text = "Телефон :";
+            this.label8.Text = "Телефон : +7 (765) 234-65-45";
             // 
             // label9
             // 
@@ -157,9 +157,9 @@ namespace LEbedev_is_1_20
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.Location = new System.Drawing.Point(44, 195);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(186, 20);
+            this.label9.Size = new System.Drawing.Size(199, 20);
             this.label9.TabIndex = 10;
-            this.label9.Text = "Количество биллетов :";
+            this.label9.Text = "Количество биллетов : 1";
             // 
             // label10
             // 
@@ -177,6 +177,7 @@ namespace LEbedev_is_1_20
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 12;
+            this.dateTimePicker1.Value = new System.DateTime(2023, 5, 26, 0, 0, 0, 0);
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // comboBox1
@@ -203,9 +204,9 @@ namespace LEbedev_is_1_20
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label12.Location = new System.Drawing.Point(44, 251);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(120, 20);
+            this.label12.Size = new System.Drawing.Size(133, 20);
             this.label12.TabIndex = 141;
-            this.label12.Text = "Сотрудник ID :";
+            this.label12.Text = "Сотрудник ID : 1";
             // 
             // label13
             // 
@@ -213,9 +214,9 @@ namespace LEbedev_is_1_20
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label13.Location = new System.Drawing.Point(44, 287);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(89, 20);
+            this.label13.Size = new System.Drawing.Size(139, 20);
             this.label13.TabIndex = 142;
-            this.label13.Text = "Фамилия :";
+            this.label13.Text = "Фамилия : Путин";
             // 
             // label14
             // 
@@ -223,9 +224,9 @@ namespace LEbedev_is_1_20
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label14.Location = new System.Drawing.Point(290, 287);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(87, 20);
+            this.label14.Size = new System.Drawing.Size(227, 20);
             this.label14.TabIndex = 143;
-            this.label14.Text = "Телефон :";
+            this.label14.Text = "Телефон : +7 (765) 345-32-43";
             // 
             // label15
             // 
@@ -279,7 +280,7 @@ namespace LEbedev_is_1_20
             this.dateTimePicker3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dateTimePicker3.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker3.TabIndex = 148;
-            this.dateTimePicker3.Value = new System.DateTime(2023, 5, 28, 19, 46, 23, 0);
+            this.dateTimePicker3.Value = new System.DateTime(2023, 5, 28, 19, 45, 0, 0);
             // 
             // Buy
             // 

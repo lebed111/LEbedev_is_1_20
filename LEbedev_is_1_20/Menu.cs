@@ -260,5 +260,11 @@ namespace LEbedev_is_1_20
             Seans seans = new Seans();
             seans.Show();
         }
+
+        private void калькуляторToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Calculate calculate = new Calculate();
+            calculate.Show();
+        }
     }
 }

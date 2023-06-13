@@ -21,11 +21,11 @@ namespace LEbedev_is_1_20
         {
             InitializeComponent();
         }
-
-        private void Seans_Load(object sender, EventArgs e)
+        void reold()
         {
-            this.ControlBox = false;
-            f2.con();
+            dataGridView1.Columns.Clear();
+            table.Rows.Clear();
+            table.Columns.Clear();
             f2.conn.Open();
             string cl = "SELECT * FROM time_seans;";
             MyDA.SelectCommand = new MySqlCommand(cl, f2.conn);
@@ -41,6 +41,13 @@ namespace LEbedev_is_1_20
             f2.conn.Close();
         }
 
+        private void Seans_Load(object sender, EventArgs e)
+        {
+            this.ControlBox = false;
+            f2.con();
+            reold();
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -48,12 +55,32 @@ namespace LEbedev_is_1_20
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            f2.conn.Open();
+            string f = $"INSERT time_seans VALUES ( {Convert.ToInt32(table.Rows[table.Rows.Count-1][0])+1},\"{maskedTextBox1.Text}\")";
+            MySqlCommand command = new MySqlCommand(f, f2.conn);
+            command.ExecuteNonQuery();
+            f2.conn.Close();
+            reold();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            f2.conn.Open();
+            string del = $" delete FROM time_seans WHERE ID = {Convert.ToInt32(textBox1.Text)}";
+            MySqlCommand command = new MySqlCommand(del, f2.conn);
+            command.ExecuteNonQuery();
+            f2.conn.Close();
+            reold();
         }
     }
 }

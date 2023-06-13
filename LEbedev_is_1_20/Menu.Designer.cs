@@ -37,6 +37,7 @@ namespace LEbedev_is_1_20
             this.купитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.калькуляторToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сотруднкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.настройкаВремениСеансаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
@@ -44,7 +45,6 @@ namespace LEbedev_is_1_20
             this.label2 = new System.Windows.Forms.Label();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.metroButton6 = new MetroFramework.Controls.MetroButton();
-            this.настройкаВремениСеансаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -112,6 +112,7 @@ namespace LEbedev_is_1_20
             this.калькуляторToolStripMenuItem.Name = "калькуляторToolStripMenuItem";
             this.калькуляторToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
             this.калькуляторToolStripMenuItem.Text = "Калькулятор";
+            this.калькуляторToolStripMenuItem.Click += new System.EventHandler(this.калькуляторToolStripMenuItem_Click);
             // 
             // сотруднкиToolStripMenuItem
             // 
@@ -119,6 +120,13 @@ namespace LEbedev_is_1_20
             this.сотруднкиToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.сотруднкиToolStripMenuItem.Text = "Сотруднки";
             this.сотруднкиToolStripMenuItem.Click += new System.EventHandler(this.сотруднкиToolStripMenuItem_Click);
+            // 
+            // настройкаВремениСеансаToolStripMenuItem
+            // 
+            this.настройкаВремениСеансаToolStripMenuItem.Name = "настройкаВремениСеансаToolStripMenuItem";
+            this.настройкаВремениСеансаToolStripMenuItem.Size = new System.Drawing.Size(169, 20);
+            this.настройкаВремениСеансаToolStripMenuItem.Text = "Настройка времени сеанса";
+            this.настройкаВремениСеансаToolStripMenuItem.Click += new System.EventHandler(this.настройкаВремениСеансаToolStripMenuItem_Click);
             // 
             // metroButton1
             // 
@@ -184,13 +192,6 @@ namespace LEbedev_is_1_20
             this.metroButton6.TabIndex = 12;
             this.metroButton6.Text = "Выход";
             this.metroButton6.Click += new System.EventHandler(this.metroButton6_Click);
-            // 
-            // настройкаВремениСеансаToolStripMenuItem
-            // 
-            this.настройкаВремениСеансаToolStripMenuItem.Name = "настройкаВремениСеансаToolStripMenuItem";
-            this.настройкаВремениСеансаToolStripMenuItem.Size = new System.Drawing.Size(169, 20);
-            this.настройкаВремениСеансаToolStripMenuItem.Text = "Настройка времени сеанса";
-            this.настройкаВремениСеансаToolStripMenuItem.Click += new System.EventHandler(this.настройкаВремениСеансаToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
