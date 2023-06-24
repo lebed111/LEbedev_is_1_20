@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Text.RegularExpressions;
 
 namespace LEbedev_is_1_20
 {
@@ -197,6 +198,30 @@ namespace LEbedev_is_1_20
                 }
             }
             catch (Exception ex) { }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+           
+            string add = $"UPDATE Client SET Famila = \"{textBox1.Text}\", Name = \"{textBox2.Text}\", Otchestvo = \"{textBox3.Text}\", Telefon = \"{maskedTextBox1.Text}\", Mail = \"{textBox6.Text}\", BlacList = \"{button10.Text}\"  WHERE ID = {table.Rows[start - 1][0]}";
+            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            MatchCollection matches = regex.Matches(textBox6.Text);
+            if (matches.Count > 0 && maskedTextBox1.Text.Length == 18)
+            {
+                f2.conn.Open();
+                MySqlCommand command = new MySqlCommand(add, f2.conn);
+                command.ExecuteNonQuery();
+                f2.conn.Close();
+                this.Close();
+            }
+            if (maskedTextBox1.Text.Length < 18)
+            {
+                MessageBox.Show("Неправильно указан номер телефона");
+            }
+            if (matches.Count == 0)
+            {
+                MessageBox.Show("Неправильно указана почта");
+            }
         }
     }
 }

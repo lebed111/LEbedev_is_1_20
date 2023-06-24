@@ -148,6 +148,7 @@ namespace LEbedev_is_1_20
             this.button7.TabIndex = 126;
             this.button7.Text = "Сохранить";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 

@@ -51,36 +51,40 @@ namespace LEbedev_is_1_20
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int p = Convert.ToInt32(comboBox1.SelectedItem);
             try
-            { 
-                for (int i = 0; p < 99999999; i++)
+            {
+                int p = Convert.ToInt32(comboBox1.SelectedItem);
+                try
                 {
-                    if (p == Convert.ToInt32(table.Rows[i][1]))
+                    for (int i = 0; p < 9999999; i++)
                     {
-                        MessageBox.Show($"В ID {Convert.ToInt32(table.Rows[i][0])} данной покупке найденно совпадение по биллету, поэтому его нельзя удалитью");
-                        break;
+                        if (p == Convert.ToInt32(table.Rows[i][1]))
+                        {
+                            MessageBox.Show($"В ID {Convert.ToInt32(table.Rows[i][0])} данной покупке найденно совпадение по биллету, поэтому его нельзя удалитью");
+                            break;
+                        }
+                    }
+                }
+                catch
+                {
+                    DialogResult dialogResult = MessageBox.Show($"Вы точно хотите удалить Биллет с {p} ID", "Удаление", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        f2.conn.Open();
+                        string del = $"DELETE FROM Bullet WHERE ID = {p}";
+                        MySqlCommand command = new MySqlCommand(del, f2.conn);
+                        command.ExecuteNonQuery();
+                        f2.conn.Close();
+                        this.Close();
+
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+
                     }
                 }
             }
-            catch
-            {
-                DialogResult dialogResult = MessageBox.Show($"Вы точно хотите удалить Биллет с {p} ID", "Удаление", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    f2.conn.Open();
-                    string del = $"DELETE FROM Bullet WHERE ID = {p}";
-                    MySqlCommand command = new MySqlCommand(del, f2.conn);
-                    command.ExecuteNonQuery();
-                    f2.conn.Close();
-                    this.Close();
-
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-
-                }
-            }
+            catch { MessageBox.Show("Ведите цифырку которую можно выбрать"); }
         }
     }
 }

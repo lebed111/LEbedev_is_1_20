@@ -343,6 +343,7 @@ namespace LEbedev_is_1_20
             this.button14.TabIndex = 97;
             this.button14.Text = "Изменить";
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // label1
             // 

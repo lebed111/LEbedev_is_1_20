@@ -81,7 +81,16 @@ namespace LEbedev_is_1_20
             MatchCollection matches = regex.Matches(textBox6.Text);
             foreach (Match match in matches)
                 q = match.Length;
-            if (q > 0 && textBox1.TextLength > 0 && textBox2.TextLength > 0 && maskedTextBox1.TextLength > 0 && textBox6.TextLength > 0)
+            if (q > 0 && textBox1.TextLength > 0 && textBox2.TextLength > 0 && maskedTextBox1.TextLength == 18 && textBox6.TextLength > 0)
+            {
+                f2.conn.Open();
+                MySqlCommand command = new MySqlCommand(dab, f2.conn);
+                command.ExecuteNonQuery();
+                f2.conn.Close();
+                this.Close();
+            }
+
+            else if (q == 0 && textBox1.TextLength > 0 && textBox2.TextLength > 0 && maskedTextBox1.TextLength == 18 && textBox6.TextLength == 0)
             {
                 f2.conn.Open();
                 MySqlCommand command = new MySqlCommand(dab, f2.conn);
@@ -93,6 +102,11 @@ namespace LEbedev_is_1_20
             else if (q == 0)
             {
                 MessageBox.Show("Неправильно ввели почту");
+            }
+
+            else if (maskedTextBox1.TextLength < 18)
+            {
+                MessageBox.Show("Заполните правильно номер телефона");
             }
             
             else
